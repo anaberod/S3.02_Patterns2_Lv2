@@ -1,14 +1,19 @@
+import observable.StockObservable;
+import observer.StockAgency;
+import observer.StockObserver;
+
 public class Main {
     public static void main(String[] args) {
-        StockObservable observable = new StockObservable();
-        StockObserver agency1 = new StockAgency("Agency A");
-        StockObserver agency2 = new StockAgency("Agency B");
+        StockObservable stockMarket = new StockObservable();
 
-        observable.addObserver(agency1);
-        observable.addObserver(agency2);
+        StockObserver agencyA = new StockAgency("Agency A");
+        StockObserver agencyB = new StockAgency("Agency B");
 
-        observable.setMarketIsUp(true);
-        observable.setMarketIsUp(false);
+        stockMarket.addObserver(agencyA);
+        stockMarket.addObserver(agencyB);
 
+        stockMarket.marketGoesUp();
+        stockMarket.marketGoesDown();
+        stockMarket.marketClosed();
     }
 }
