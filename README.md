@@ -1,66 +1,96 @@
-
 # 🧠 Stock Observer Pattern – Level 2
 
-## 📄 Description – Exercise Statement
+## 📄 Description
 
-This project implements the **Observer Design Pattern** in Java. The scenario simulates a stock trading system where a `StockObservable` (subject) notifies multiple `StockAgency` observers when the stock market rises or falls.
+This project demonstrates the **Observer Design Pattern** in Java through a simplified stock market system.  
+A `StockObservable` (Subject) notifies multiple `StockAgency` (Observer) instances about market changes such as **"market up"**, **"market down"**, or **"market closed"**.
 
-**Statement:**  
-Design a system where a **Stock Agent (Observable)** notifies various **Stock Agencies (Observers)** whenever the market goes up or down. The Observable must keep references to all Observers and notify them of state changes.
+---
+
+## 🎯 Exercise Statement
+
+Design a system where a **Stock Agent (Observable)** notifies various **Stock Agencies (Observers)** when the market goes up or down.  
+The Observable must keep references to all Observers and notify them of state changes.
+
+---
+
+## 🧠 What is the Observer Pattern?
+
+The **Observer Pattern** is a behavioral design pattern that defines a **one-to-many dependency** between objects so that when one object changes its state, all its dependents are notified automatically.
+
+In this project:
+- The **`StockMarket`** acts as the Observable.
+- The **`StockAgency`** instances act as the Observers.
+- A **`StockEvent`** carries structured data like event type and description.
+
+This promotes **loose coupling** and makes the system **extensible**.
+
+---
+
+## 📦 Project Structure
+
+| Role                 | Class         | Description                                                        |
+|----------------------|---------------|--------------------------------------------------------------------|
+| Observable (Subject) | `StockMarket` | Manages a list of observers and notifies them of market changes.   |
+| Observer             | `StockAgency` | Reacts to market updates by printing messages.                     |
+| Event                | `StockEvent`  | Structured event containing type and description.                  |
+| Main                 | `Main`        | Sets up and runs the market simulation.                            |
+
+---
 
 ## 💻 Technologies Used
 
-- Java 8+
-- IntelliJ IDEA / Eclipse (Recommended IDEs)
-- Git & GitHub for version control
+- Java 24
+- IntelliJ IDEA or Eclipse
+- Git & GitHub
+
+---
 
 ## 📋 Requirements
 
 - Java Development Kit (JDK) 8 or higher
-- Git (to clone the repository)
-- A Java-compatible IDE (e.g., IntelliJ IDEA, Eclipse)
-- No external dependencies required
+- Git (for version control)
+- A Java IDE (e.g., IntelliJ IDEA)
+
+---
 
 ## 🛠️ Installation
-
-To set up the project locally:
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/anaberod/S3.02_Patterns2_Lv2.git
    ```
-2. Open the project in your IDE.
-3. Compile all `.java` files inside the `src` folder.
+
+2. Open the project in your IDE (IntelliJ IDEA or Eclipse).
+
+3. Make sure `src` is marked as **Sources Root** in the IDE.
+
+---
 
 ## ▶️ Execution
 
-To run the project:
+1. Open the file `Main.java`
+2. Run the `main()` method
+3. Sample output:
+   ```
+   Agency A received: The market is up
+   Agency B received: The market is up
+   Agency A received: The market is down
+   Agency B received: The market has closed
+   ```
 
-1. Locate and open the `Main.java` file.
-2. Run the `main()` method.
-3. You should see output in the console indicating how each stock agency received notifications when the market went up or down.
 
-
-## 🌐 Deployment
-
-This project is intended for educational purposes and does not require deployment.  
-However, if needed, it can be packaged into a `.jar` file:
-
-```bash
-javac *.java
-jar cvfe StockObserverApp.jar Main *.class
-java -jar StockObserverApp.jar
-```
+---
 
 ## 🤝 Contributions
 
-Feel free to fork the repository and open a pull request.  
-Contributions should follow these guidelines:
+Feel free to fork the repository and submit pull requests.
 
-- Keep class and method names meaningful.
-- Follow Java naming conventions.
-- Use clean and modular code.
-- Add comments where necessary.
-- Ensure your code compiles and runs without errors.
+**Guidelines:**
+- Use meaningful class and method names
+- Follow Java naming conventions
+- Keep code clean and modular
+- Add helpful comments
+- Ensure code compiles and runs correctly
 
 ---
